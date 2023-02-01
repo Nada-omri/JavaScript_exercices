@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telephone</title>
+</head>
+<body>
+    <h1>Telephone Number Validator</h1>
+    
+    
+</body>
+<script>
+    function telephoneCheck(str) {
+  let nb = str.length;
+  if(parseint(slice(nb-4,nb))){
+    nb=nb-4;
+    str=slice(0,nb);
+  }
+  else {
+    return false;
+
+  }
+  let x=str[nb];
+  if( x ==')') {
+    if ((str[nb-4]=="(")&&(parseint(slice(nb-3,nb-1)))){
+      return true ;
+    }
+    else {
+      return false ;
+    }}
+  else if (parseint(x)){
+        for(let i=nb-1;i<nb-3; i--) {
+            if (parseint(str[i])!= true) {
+                return(false);
+                break;
+            }
+
+        }
+
+    }
+  else {
+     switch (x){
+       case " ":if (str[nb-3]==" "){
+                nb=nb-3;
+                str=slice (nb-3,nb);
+                return true;
+                break}
+       case "/":  if (str[nb-3]=="/"){
+                nb=nb-3;
+                str=slice (nb-3,nb);
+                return true;
+                break} }
+                          
+     
+   } 
+   x=str[nb];
+  if( x ==')') {
+    if ((str[nb-4]=="(")&&(parseint(slice(nb-3,nb-1)))){
+      return true ;
+    }
+    else {
+      return false ;
+    }}
+  else if (parseint(x)){
+        for(let i=nb-1;i<nb-3; i--) {
+            if (parseint(str[i])!= true) {
+                return(false);
+                break;
+            }
+
+        }
+
+    }
+  else {
+     switch (x){
+       case " ":if (str[nb-3]==" "){
+                nb=nb-3;
+                str=slice (nb-3,nb);
+                return true;
+                break}
+       case "/":  if (str[nb-3]=="/"){
+                nb=nb-3;
+                str=slice (nb-3,nb);
+                return true;
+                break} }
+                          
+     
+   } 
+  if (nb ==1){
+    if (str[nb]==1){
+        return true ;
+
+    }
+    else{
+        return false;
+    }
+  }
+  else if( nb==0){
+    return true ;
+  }
+  else {return false ;}
+
+
+}
+
+telephoneCheck("555-555-5555");
+
+</script>
+</html>

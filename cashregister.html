@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>cash register</h1>
+</body>
+<script>
+    let tab=[
+  ["PENNY", 1.01],
+  ["NICKEL", 2.05],
+  ["DIME", 3.1],
+  ["QUARTER", 4.25],
+  ["ONE", 90],
+  ["FIVE", 55],
+  ["TEN", 20],
+  ["TWENTY", 60],
+  ["ONE HUNDRED", 100]
+];
+function checkCashRegister(prix, cash, cid) {
+ let tab1 = {status: null, change: []};
+ let change = cash - prix;
+ let register = cid.reduce(function(acc, curr) {
+ acc.total += curr[1];
+ acc[curr[0]] = curr[1];
+ return acc;
+ }, {total: 0});
+ if(register.total === change) {
+ tab1.status = 'CLOSED';
+ tab1.change = cid;
+ return tab1;
+ }
+ else if(register.total < change) {
+ tab1.status = 'INSUFFICIENT_FUNDS';
+ return tab1;
+ }
+ else {
+    tab1.status = "OPEN";
+    return tab1;
+ }
+</script>
+</html>
